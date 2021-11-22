@@ -1,0 +1,27 @@
+#navbar {
+  background-color:  #FCE7A7!important;
+  height: 10vh;
+}
+
+#navbar h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+#navbar img {
+  width: 150px;
+}
+
+#navbarItems ul li a {
+  font-size: 24px;
+  background: -webkit-linear-gradient(#f1abab, #123062);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+#navbarItems ul li a:hover{
+  font-size: 28px;
+  text-decoration: underline white;
+}
