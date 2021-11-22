@@ -1,0 +1,36 @@
+footer {
+  background-color:  #FCE7A7!important;
+}
+
+#social img, #contactUs img {
+  width: 40px;
+}
+
+#contactUs, #social, #quickLinks {
+  margin: 5px 15px;
+}
+
+#contactUs h5, #quickLinks h5 {
+  border-bottom: 2px solid lightgrey;
+  text-align: center;
+}
+
+#social div {
+  display: flex;
+}
+
+#social div img{
+  line-height: 100px;
+  padding: 10px 15px;
+}
+
+#social ul {
+  display: flex;
+}
+
+#social ul li, #quickLinks ul li, #contactUs ul li{
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+
