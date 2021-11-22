@@ -1,0 +1,51 @@
+<body>
+<div class="box-wrapper">
+  <div id="whole">
+    <div id="home">
+      Home
+    </div>
+    <div id="about" align="center">
+      <h1>Intro about</h1>
+      <p>.............</p>
+      <p>.............</p>
+      <p>.............</p>
+      <p>.............</p>
+      <p>.............</p>
+
+      <ngb-carousel *ngIf="images" class="home-slides">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[0]" alt="Random first slide">
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[1]" alt="Random second slide">
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[2]"  alt="Random third slide">
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="images[3]" alt="Random fourth slide">
+          </div>
+        </ng-template>
+      </ngb-carousel>
+
+      <div class="intro-about-buttons">
+        <button>
+          <a routerLink="../products" class="btn btn-link">Products</a>
+        </button>
+        <button>
+          <a routerLink="../about" class="btn btn-link">About</a>
+        </button>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</body>
