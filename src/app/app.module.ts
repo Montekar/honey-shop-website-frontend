@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
+import { AuthGuard } from './_helpers/auth.guard'
 
 @NgModule({
   declarations: [
@@ -25,9 +28,12 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    OwlModule
+    OwlModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

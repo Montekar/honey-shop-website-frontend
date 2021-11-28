@@ -1,3 +1,8 @@
 #dropdownBox {
   margin-left: -150px;
 }
+
+.form-control.ng-touched.ng-invalid{
+  border: 2px solid red;
+}
+
