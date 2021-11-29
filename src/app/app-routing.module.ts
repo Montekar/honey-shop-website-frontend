@@ -6,11 +6,11 @@ import { AuthGuard } from './_helpers/auth.guard'
 import { RegisterComponent } from './register/register.component'
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent,canActivate:[AuthGuard]},
-  { path: 'about', component: AboutComponent,canActivate:[AuthGuard]},
+  { path: 'home', component: HomeComponent,},
+  { path: 'about', component: AboutComponent,},
   {path:'register',component:RegisterComponent},
 
-  // otherwise redirect to home
+  // otherwise redirect to home //canActivate:[AuthGuard]
   { path: '**', redirectTo: '' }
 ];
 
