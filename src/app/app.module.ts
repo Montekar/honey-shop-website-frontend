@@ -12,7 +12,8 @@ import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.c
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
-import { AuthGuard } from './_helpers/auth.guard'
+import { AuthGuard } from './_helpers/auth.guard';
+import { RegisterComponent } from './register/register.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthGuard } from './_helpers/auth.guard'
     FooterComponent,
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
