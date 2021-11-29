@@ -4,6 +4,12 @@ import { environment } from '../../environments/environment'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
+export interface User{
+  username?:string;
+  password?:string;
+  passwordConfirm?:string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +29,13 @@ export class AuthenticationService {
         }
       }));
   }
+
+  register(user) {
+    return this.http.post<any>(environment.apiUrl + '/Register', user).pipe(
+      map(user => user)
+    )
+  }
+
   getUsername(): string | null {
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
     if (currentUser) {
