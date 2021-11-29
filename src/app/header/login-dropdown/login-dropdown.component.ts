@@ -38,7 +38,6 @@ export class LoginDropdownComponent implements OnInit {
     this.authenticationService.login(this.username.value, this.password.value)
       .subscribe(
         () => {
-          console.log("success");
           this.router.navigate(['/about']);
         });
   }
