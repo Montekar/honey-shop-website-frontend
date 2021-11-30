@@ -10,6 +10,10 @@ import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
+import { ProductsComponent } from './products/products.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { JwtInterceptor } from './_helpers/jwt.interceptor'
+import { ErrorInterceptor } from './_helpers/error.interceptor'
 
 @NgModule({
   declarations: [
@@ -19,15 +23,20 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    OwlModule
+    OwlModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
