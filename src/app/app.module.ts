@@ -11,9 +11,12 @@ import { HeaderComponent } from './header/header.component';
 import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
 import { AuthGuard } from './_helpers/auth.guard';
 import { RegisterComponent } from './register/register.component'
+import { ProductsComponent } from './products/products.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { JwtInterceptor } from './_helpers/jwt.interceptor'
+import { ErrorInterceptor } from './_helpers/error.interceptor'
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { RegisterComponent } from './register/register.component'
     AppComponent,
     HomeComponent,
     AboutComponent,
+    ProductsComponent,
+    AboutComponent,
     RegisterComponent
   ],
   imports: [
@@ -31,10 +36,15 @@ import { RegisterComponent } from './register/register.component'
     AppRoutingModule,
     NgbModule,
     OwlModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
+  providers: [
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
