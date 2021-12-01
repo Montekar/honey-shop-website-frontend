@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { OwlModule } from 'ngx-owl-carousel';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -42,10 +41,10 @@ import { ErrorInterceptor } from './_helpers/error.interceptor'
     HttpClientModule
   ],
   providers: [
+    AuthGuard,
   { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 ],
-  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
