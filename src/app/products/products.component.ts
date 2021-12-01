@@ -9,6 +9,7 @@ import { first } from 'rxjs/operators'
 })
 export class ProductsComponent implements OnInit {
   products: any;
+  amount: number = 0
 
   constructor(private productService: ProductService) { }
 

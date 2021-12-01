@@ -7,23 +7,28 @@
             <a ngbNavLink>Honey</a>
             <ng-template ngbNavContent>
               <div class="d-flex flex-row m-2">
-                <div class="w-50">
+                <div class="w-50 productView">
                   <h3>Honey</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid consequatur ea est fugit, hic id modi nulla odit praesentium quia quidem ratione rem sunt suscipit? Fuga labore omnis optio!
                   </p>
-                  <h4>Light vs Dark Honey</h4>
+                  <h3>Light vs Dark Honey</h3>
                   <p>
                     Lighter honey usually comes with a less intense flavor. Meanwhile, darker-colored honey comes with a flavor profile that is more intense and is richer compared to lighter honey. Dark honey also has more nutrients, vitamins, and antioxidants due to the presence of different substances that make it dark.
                   </p>
                   <div>
-                    <span>Select Honey</span>
-                    <hr>
-                    <label for="type">Type:</label>
-                    <select name="type" id="type">
-                      <option *ngFor="let product of products" value="{{product}}">{{product.description}}</option>
-
-                    </select>
+                    <h5>Select Honey</h5>
+                    <span>
+                      <label for="type">Type:</label>
+                      <select name="type" id="type">
+                        <option *ngFor="let product of products" value="{{product}}">{{product.description}}</option>
+                      </select>
+                    </span>
+                    <span>
+                      <label for="type">Amount:</label>
+                      <input type="number" value="{{amount}}">
+                    </span>
+                    <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
                   </div>
                 </div>
                 <div class="w-50 text-center mt-3">

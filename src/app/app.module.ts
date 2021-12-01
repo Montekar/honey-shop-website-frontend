@@ -16,7 +16,6 @@ import { ProductsComponent } from './products/products.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { JwtInterceptor } from './_helpers/jwt.interceptor'
 import { ErrorInterceptor } from './_helpers/error.interceptor'
-import { RegisterComponent } from './register/register.component'
 
 @NgModule({
   declarations: [
@@ -46,4 +45,4 @@ import { RegisterComponent } from './register/register.component'
 ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
