@@ -1,0 +1,44 @@
+div {
+  height: 80vh;
+}
+
+#productsNav {
+  background-color: #123062;
+  color: white;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+#productsNav div{
+  position: absolute;
+  top: 80%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+#productsNav div span {
+  font-size: 32px;
+  text-underline-offset: 2px;
+  text-decoration: underline 2px gray;
+}
+
+#productsNav div ul li a {
+  font-size: 22px;
+}
+
+
+
+#productsNavList{
+  display: block;
+}
+
+#contextView {
+  background-color: #f1abab;
+}
+
+.image {
+  height: 75vh;
+  border-radius: 25px;
+}
+

@@ -1,0 +1,57 @@
+<div class="d-flex flex-row m-2">
+    <div id="productsNav" class="w-25">
+      <div>
+        <span>Our Products</span>
+        <ul ngbNav #productOverview="ngbNav" id="productsNavList">
+          <li ngbNavItem>
+            <a ngbNavLink>Honey</a>
+            <ng-template ngbNavContent>
+              <div class="d-flex flex-row m-2">
+                <div class="w-50">
+                  <h3>Honey</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid consequatur ea est fugit, hic id modi nulla odit praesentium quia quidem ratione rem sunt suscipit? Fuga labore omnis optio!
+                  </p>
+                  <h4>Light vs Dark Honey</h4>
+                  <p>
+                    Lighter honey usually comes with a less intense flavor. Meanwhile, darker-colored honey comes with a flavor profile that is more intense and is richer compared to lighter honey. Dark honey also has more nutrients, vitamins, and antioxidants due to the presence of different substances that make it dark.
+                  </p>
+                  <div>
+                    <span>Select Honey</span>
+                    <hr>
+                    <label for="type">Type:</label>
+                    <select name="type" id="type">
+                      <option *ngFor="let product of products" value="{{product}}">{{product.description}}</option>
+
+                    </select>
+                  </div>
+                </div>
+                <div class="w-50 text-center mt-3">
+                  <img src="./assets/images/honey-jar.jpg" alt="" class="image">
+                </div>
+              </div>
+            </ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink>Bread</a>
+            <ng-template ngbNavContent>
+              <div>
+                <h3>Bread</h3>
+              </div>
+            </ng-template>
+          </li>
+          <li ngbNavItem>
+            <a ngbNavLink>Soup</a>
+            <ng-template ngbNavContent>
+              <div>
+                <h3>Soup</h3>
+              </div>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="contextView" class="w-75">
+      <div [ngbNavOutlet]="productOverview"></div>
+    </div>
+</div>
