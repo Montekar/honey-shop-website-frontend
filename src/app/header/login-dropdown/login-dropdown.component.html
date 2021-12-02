@@ -5,14 +5,14 @@
       <div ngbDropdownMenu aria-labelledby="dropdownForm1" id="dropdownBox">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-4 py-3">
           <div class='form-group'>
-          <input type="text" id = "username" ngModel name="username" placeholder="Username" formControlName="username" class="form-control" required>
-            <div class ="alert alert-danger" *ngIf="username.touched && !username.valid">
-              <div *ngIf='username.errors?.required'>Can't be empty!</div>
-              <!-- <div *ngIf='email.errors?.email'>Email is required.</div> -->
+          <input type="email" email id = "email" placeholder="Email" formControlName="email" class="form-control" required>
+            <div class ="alert alert-danger" *ngIf="email.touched && !email.valid">
+              <div *ngIf='email.errors?.required'>Can't be empty!</div>
+              <div *ngIf='email.errors?.email'>Email is required.</div>
             </div>
             </div>
           <div class='form-group'>
-          <input type="password" ngModel name="password" placeholder="Password" formControlName="password" class="form-control" required>
+          <input type="password" placeholder="Password" formControlName="password" class="form-control" required>
             <div class ="alert alert-danger" *ngIf="password.touched && !password.valid">
               <div *ngIf='password.errors?.required'>Can't be empty!</div>
             </div>

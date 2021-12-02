@@ -14,8 +14,8 @@ import { AuthGuard } from './_helpers/auth.guard';
 import { RegisterComponent } from './register/register.component'
 import { ProductsComponent } from './products/products.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
-import { JwtInterceptor } from './_helpers/jwt.interceptor'
-import { ErrorInterceptor } from './_helpers/error.interceptor'
+//import { JwtInterceptor } from './_helpers/jwt.interceptor'
+//import { ErrorInterceptor } from './_helpers/error.interceptor'
 
 @NgModule({
   declarations: [
@@ -40,8 +40,8 @@ import { ErrorInterceptor } from './_helpers/error.interceptor'
   ],
   providers: [
     AuthGuard,
-  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-  { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  //{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  //{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 ],
   bootstrap: [AppComponent]
 })
