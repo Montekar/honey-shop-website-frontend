@@ -5,7 +5,7 @@ import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
 export interface User{
-  username?:string;
+  email?:string;
   password?:string;
   passwordConfirm?:string;
 }
@@ -17,12 +17,12 @@ export class AuthenticationService {
 
   constructor(private http:HttpClient) { }
 
-  login(username: string, password: string): Observable<boolean> {
-    return this.http.post<any>(environment.apiUrl + '/Login', {username, password})
+  login(email: string, password: string): Observable<boolean> {
+    return this.http.post<any>(environment.apiUrl + '/Login', {email: email, password})
       .pipe(map(response => {
         const token = response.token;
         if (token) {
-          localStorage.setItem('currentUser', JSON.stringify({username: username, token: token}));
+          localStorage.setItem('currentUser', JSON.stringify({email: email, token: token}));
           return true;
         } else {
           return false;

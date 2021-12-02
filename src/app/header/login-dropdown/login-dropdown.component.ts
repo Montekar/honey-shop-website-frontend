@@ -17,13 +17,13 @@ export class LoginDropdownComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
-  get username() {
-    return this.loginForm.get('username') as FormControl;
+  get email() {
+    return this.loginForm.get('email') as FormControl;
   }
 
   get password() {
@@ -35,7 +35,7 @@ export class LoginDropdownComponent implements OnInit {
     return;
     }
 
-    this.authenticationService.login(this.username.value, this.password.value)
+    this.authenticationService.login(this.email.value, this.password.value)
       .subscribe(
         () => {
           this.router.navigate(['/about']);
@@ -45,5 +45,6 @@ export class LoginDropdownComponent implements OnInit {
   onLogout() {
     this.authenticationService.logout();
     this.router.navigate(['/']);
+    this.loginForm.reset();
   }
 }

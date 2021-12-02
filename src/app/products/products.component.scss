@@ -1,0 +1,119 @@
+div {
+  height: 80vh;
+}
+
+#productsNav {
+  background-color: #123062;
+  color: white;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+#productsNav div {
+  position: absolute;
+  top: 80%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+}
+
+#productsNav div span {
+  font-size: 32px;
+  text-underline-offset: 2px;
+  text-decoration: underline 2px gray;
+}
+
+#productsNav div ul li a {
+  font-size: 22px;
+}
+
+
+#productsNavList {
+  display: block;
+}
+
+#contextView {
+  overflow: hidden;
+}
+
+.productView {
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.productView h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  padding: 15px;
+}
+
+.productView p {
+  width: 75%;
+  text-align: justify;
+  margin: auto;
+}
+
+.productView div {
+  background: rgb(221, 215, 102);
+  background: linear-gradient(90deg, rgba(221, 215, 102, 1) 0%, rgba(226, 209, 7, 1) 35%, rgba(162, 152, 35, 1) 100%);
+  margin: 150px 0 0;
+  position: relative;
+  border: 2px solid chocolate;
+  border-radius: 25px;
+  height: 25%;
+}
+
+.productView div h5 {
+  margin-top: -17px;
+  margin-left: 25px;
+  background: white;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 25px;
+}
+
+.productView div span {
+  padding: 10px;
+  display: block;
+}
+
+.productView div span label {
+  padding-right: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.productView div span input, select {
+  width: 150px;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+}
+
+.cartBtn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  bottom: 15px;
+  right: 25px;
+}
+
+.cartBtn:hover {
+  border: 2px dotted lightblue;
+  border-radius: 25px;
+  color: yellow;
+}
+
+.image {
+  height: 75vh;
+  border-radius: 25px;
+}
+
+.cartBtn img {
+  width: 55px;
+  height: 45px;
+  padding: 5px 10px;
+}
+
+

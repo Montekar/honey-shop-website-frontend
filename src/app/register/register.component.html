@@ -1,17 +1,39 @@
 <header style='text-align:center'><h1>Registration</h1></header>
 <body>
+<div *ngIf="submitted && alert" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Success!</strong> Account has been registered!
+  <button (click)='closeAlert()' type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div *ngIf="submitted && !alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Failed!</strong> Could not register the account!
+  <button (click)='closeAlert()' type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="px-4 py-3">
       <div class="form-group" >
-        <label for="inputUsername">Username</label>
-        <input type="email" class="form-control" id="inputUsername" placeholder="Enter username" formControlName="username">
+        <label for="email">Email</label>
+        <input type="email" email class="form-control" id="email" placeholder="Enter email" formControlName="email">
+        <div class ="alert alert-danger" *ngIf="email.dirty && !email.valid">
+          <div *ngIf='email.errors?.required'>Can't be empty!</div>
+          <div *ngIf='email.errors?.email'>Email is required.</div>
+        </div>
       </div>
       <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+        <div class ="alert alert-danger" *ngIf="password.dirty && !password.valid">
+          <div *ngIf='password.errors?.required'>Can't be empty!</div>
+        </div>
       </div>
   <div class="form-group">
     <label for="inputPasswordConfirm">Confirm Password</label>
     <input type="password" class="form-control" id="inputPasswordConfirm" placeholder="Password" formControlName="passwordConfirm">
+    <div class ="alert alert-danger" *ngIf="passwordConfirm.dirty && !passwordConfirm.valid">
+      <div *ngIf='passwordConfirm.errors?.required'>Can't be empty!</div>
+    </div>
   </div>
       <button type="submit" class="btn btn-primary">Register</button>
     </form>
