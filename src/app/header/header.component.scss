@@ -9,7 +9,7 @@
 }
 
 #navbar img {
-  width: 150px;
+  max-height: inherit;
 }
 
 #navbarItems ul li a {
@@ -24,4 +24,12 @@
 #navbarItems ul li a:hover{
   font-size: 28px;
   text-decoration: underline white;
+}
+
+.max-height{
+  max-height: 90px;
+}
+
+@media only screen and (max-width: 800px){
+
 }

@@ -1,5 +1,5 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-  <a class="navbar-brand" [routerLink]="'.'">
+  <a class="navbar-brand max-height" [routerLink]="'.'">
     <img src="../../assets/images/logo.png" alt="">
   </a>
   <h2>Honey Shop</h2>
@@ -22,7 +22,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
       </li>
+      <li class="nav-item">
+        <app-login-dropdown></app-login-dropdown>
+      </li>
     </ul>
   </div>
-  <app-login-dropdown></app-login-dropdown>
 </nav>

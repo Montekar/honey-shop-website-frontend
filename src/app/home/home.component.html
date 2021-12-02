@@ -1,39 +1,25 @@
 <body>
 <div class="box-wrapper">
   <div id="whole">
-    <div id="home">
-      Home
+    <div id="home" class="img-size-margin">
+      <img src="assets/pictures/Double_Soup_Pack.jpg" alt="home" width="800" height="500">
     </div>
-    <div id="about" align="center">
+    <div id="about" class="about-size-margin">
+      <div>
       <h1>Intro about</h1>
-      <p>.............</p>
-      <p>.............</p>
-      <p>.............</p>
-      <p>.............</p>
-      <p>.............</p>
-
-      <ngb-carousel *ngIf="images" class="home-slides">
-        <ng-template ngbSlide>
+      <p class="about-text slide-in-top">Mūsų bitynas įsikūręs Biržų rajone. Pradėjome bitininkauti dar tik prieš 6 metus, bet labai mylime savo biteles ir po truputį vis didiname savo bityną. Bites laikome ne tik dėl medaus, mums patinka stebėti jų gyvenimą, augimo procesą, sužinoti vis kažką naujo ir įdomaus. Buvimas prie bičių nuramina mintis ir atpalaiduoja nuo kasdienių rūpesčių.
+        <br> Mūsų bitutės gyvena netoli miško ir pievų, visą medunešio sezoną renkamas medus būna išsuktas iš įvairių augalų, kurie žydi visą vasarą, todėl medus skiriasi skoniu, kvapu ir konsistencija.
+        <br> Kaip papildoma veikla užsiimame ir įvairių kvapų bei spalvų rankų darbo muiliukų su medumi gaminimu.</p>
+      </div>
+      <div class="carrusel">
+      <ngb-carousel>
+        <ng-template ngbSlide *ngFor="let imgUrl of imgArray">
           <div class="picsum-img-wrapper">
-            <img [src]="images[0]" alt="Random first slide">
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="images[1]" alt="Random second slide">
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="images[2]"  alt="Random third slide">
-          </div>
-        </ng-template>
-        <ng-template ngbSlide>
-          <div class="picsum-img-wrapper">
-            <img [src]="images[3]" alt="Random fourth slide">
+            <img class="max-img-size" [src]="imgUrl" alt="Random slide">
           </div>
         </ng-template>
       </ngb-carousel>
+      </div>
 
       <div class="intro-about-buttons">
         <button>
