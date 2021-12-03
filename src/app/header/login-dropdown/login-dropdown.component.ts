@@ -41,18 +41,13 @@ export class LoginDropdownComponent implements OnInit {
       .subscribe({
         next: () => {
           this.alert=false;
-          this.router.navigate(['/about'])
+          this.router.navigate(['/about']);
+          this.loginForm.reset();
         },
         error: error => {
           this.alert=true;
         },
       });
-  }
-
-  onLogout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/']);
-    this.loginForm.reset();
   }
 
   closeAlert() {

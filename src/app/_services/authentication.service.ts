@@ -38,8 +38,9 @@ export class AuthenticationService {
 
   getUsername(): string | null {
     const currentUser = JSON.parse(<string>localStorage.getItem('currentUser'));
+
     if (currentUser) {
-      return currentUser.username;
+      return currentUser.email;
     } else {
       return null;
     }

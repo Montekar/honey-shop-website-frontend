@@ -30,6 +30,36 @@
   max-height: 90px;
 }
 
+ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+}
+ul li a{
+  display: block;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+}
+ul li ul{
+  background: #FCE7A7;
+}
+ul li ul li{
+  float:none;
+}
+ul li ul{
+  display: none
+}
+
+.dropdown{
+  cursor: pointer;
+}
+ul li:hover ul{
+  display: block;
+}
+
 @media only screen and (max-width: 800px){
 
 }
