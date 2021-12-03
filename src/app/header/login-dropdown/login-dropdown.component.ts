@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthenticationService } from '../../_services/authentication.service'
 import { Router } from '@angular/router'
+import { first } from 'rxjs/operators'
 
 @Component({
   selector: 'app-login-dropdown',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router'
 })
 export class LoginDropdownComponent implements OnInit {
   loginForm: FormGroup;
+  alert: boolean = false
 
   constructor(private formBuilder: FormBuilder,
               public authenticationService:AuthenticationService,
@@ -36,15 +38,24 @@ export class LoginDropdownComponent implements OnInit {
     }
 
     this.authenticationService.login(this.email.value, this.password.value)
-      .subscribe(
-        () => {
-          this.router.navigate(['/about']);
-        });
+      .subscribe({
+        next: () => {
+          this.alert=false;
+          this.router.navigate(['/about'])
+        },
+        error: error => {
+          this.alert=true;
+        },
+      });
   }
 
   onLogout() {
     this.authenticationService.logout();
     this.router.navigate(['/']);
     this.loginForm.reset();
+  }
+
+  closeAlert() {
+    this.alert = false;
   }
 }

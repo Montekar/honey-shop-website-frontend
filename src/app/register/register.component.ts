@@ -52,12 +52,10 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe({
         next: () => {
-          console.log("success")
           this.submitted = true;
           this.alert=true;
         },
         error: error => {
-          console.log('failure')
           this.submitted = true;
           this.alert=false;
         },
