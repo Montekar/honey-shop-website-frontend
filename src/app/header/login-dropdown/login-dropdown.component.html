@@ -3,6 +3,12 @@
     <div *ngIf='!authenticationService.loggedIn()' ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>Login</button>
       <div ngbDropdownMenu aria-labelledby="dropdownForm1" id="dropdownBox">
+        <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Incorrect Details!</strong>
+          <button (click)='closeAlert()' type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-4 py-3">
           <div class='form-group'>
           <input type="email" email id = "email" placeholder="Email" formControlName="email" class="form-control" required>
