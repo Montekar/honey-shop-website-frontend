@@ -13,7 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthGuard } from './_helpers/auth.guard';
 import { RegisterComponent } from './register/register.component'
 import { ProductsComponent } from './products/products.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
 //import { JwtInterceptor } from './_helpers/jwt.interceptor'
 //import { ErrorInterceptor } from './_helpers/error.interceptor'
 
@@ -27,7 +28,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
     HomeComponent,
     AboutComponent,
     ProductsComponent,
-    RegisterComponent
+    RegisterComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

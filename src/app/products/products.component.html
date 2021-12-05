@@ -19,14 +19,14 @@
                   <div>
                     <h5>Select Honey</h5>
                     <span>
-                      <label for="type">Type:</label>
-                      <select name="type" id="type">
-                        <option *ngFor="let product of products" value="{{product}}">{{product.description}}</option>
+                      <label for="honeyType">Type:</label>
+                      <select name="type" id="honeyType">
+                        <option *ngFor="let product of getHoneyProducts()" value="{{product}}">{{product.description}}</option>
                       </select>
                     </span>
                     <span>
-                      <label for="type">Amount:</label>
-                      <input type="number" value="{{amount}}">
+                      <label for="honeyAmount">Amount:</label>
+                      <input type="number" id="honeyAmount" value="{{amount}}">
                     </span>
                     <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
                   </div>
@@ -40,16 +40,68 @@
           <li ngbNavItem>
             <a ngbNavLink>Bread</a>
             <ng-template ngbNavContent>
-              <div>
-                <h3>Bread</h3>
+              <div class="d-flex flex-row m-2">
+                <div class="w-50 productView">
+                  <h3>Honey</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid consequatur ea est fugit, hic id modi nulla odit praesentium quia quidem ratione rem sunt suscipit? Fuga labore omnis optio!
+                  </p>
+                  <h3>Light vs Dark Honey</h3>
+                  <p>
+                    Lighter honey usually comes with a less intense flavor. Meanwhile, darker-colored honey comes with a flavor profile that is more intense and is richer compared to lighter honey. Dark honey also has more nutrients, vitamins, and antioxidants due to the presence of different substances that make it dark.
+                  </p>
+                  <div>
+                    <h5>Select Honey</h5>
+                    <span>
+                      <label for="breadType">Type:</label>
+                      <select name="type" id="breadType">
+                        <option *ngFor="let product of getBreadProducts()" value="{{product}}">{{product.description}}</option>
+                      </select>
+                    </span>
+                    <span>
+                      <label for="breadAmount">Amount:</label>
+                      <input type="number"  id="breadAmount" value="{{amount}}">
+                    </span>
+                    <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
+                  </div>
+                </div>
+                <div class="w-50 text-center mt-3">
+                  <img src="./assets/images/honey-jar.jpg" alt="" class="image">
+                </div>
               </div>
             </ng-template>
           </li>
           <li ngbNavItem>
             <a ngbNavLink>Soup</a>
             <ng-template ngbNavContent>
-              <div>
-                <h3>Soup</h3>
+              <div class="d-flex flex-row m-2">
+                <div class="w-50 productView">
+                  <h3>Honey</h3>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid consequatur ea est fugit, hic id modi nulla odit praesentium quia quidem ratione rem sunt suscipit? Fuga labore omnis optio!
+                  </p>
+                  <h3>Light vs Dark Honey</h3>
+                  <p>
+                    Lighter honey usually comes with a less intense flavor. Meanwhile, darker-colored honey comes with a flavor profile that is more intense and is richer compared to lighter honey. Dark honey also has more nutrients, vitamins, and antioxidants due to the presence of different substances that make it dark.
+                  </p>
+                  <div>
+                    <h5>Select Honey</h5>
+                    <span>
+                      <label for="soapType">Type:</label>
+                      <select name="type" id="soapType">
+                        <option *ngFor="let product of getSoapProducts()" value="{{product}}">{{product.description}}</option>
+                      </select>
+                    </span>
+                    <span>
+                      <label for="soapAmount">Amount:</label>
+                      <input type="number" id="soapAmount" value="{{amount}}">
+                    </span>
+                    <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
+                  </div>
+                </div>
+                <div class="w-50 text-center mt-3">
+                  <img src="./assets/images/honey-jar.jpg" alt="" class="image">
+                </div>
               </div>
             </ng-template>
           </li>
