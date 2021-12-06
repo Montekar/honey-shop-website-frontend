@@ -41,8 +41,10 @@ export class LoginDropdownComponent implements OnInit {
       .subscribe({
         next: () => {
           this.alert=false;
+          this.loginForm.disable();
           this.router.navigate(['/about']);
           this.loginForm.reset();
+          this.loginForm.enable();
         },
         error: error => {
           this.alert=true;

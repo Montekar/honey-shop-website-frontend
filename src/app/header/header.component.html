@@ -24,7 +24,7 @@
       </li>
       <li class ="dropdown" *ngIf='authenticationService.loggedIn()'><a>{{authenticationService.getUsername()}}</a>
         <ul>
-          <li><a class="nav-link" routerLink="manage/details">Manage Details</a></li>
+          <li><a class="nav-link" routerLink="account/details">Manage Details</a></li>
         </ul>
       </li>
       <li *ngIf='authenticationService.loggedIn()' class="nav-item">
