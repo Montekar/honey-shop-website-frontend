@@ -6,6 +6,7 @@ import { AuthGuard } from './_helpers/auth.guard'
 import { RegisterComponent } from './register/register.component'
 import { ProductsComponent } from './products/products.component'
 import { CustomerDetailsComponent } from './customer-details/customer-details.component'
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent,},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'products',component:ProductsComponent},
   {path:'account/details',component:CustomerDetailsComponent},
+  {path:'cart',component:ShoppingCartComponent},
 
   // otherwise redirect to home //canActivate:[AuthGuard]
   { path: '**', redirectTo: '' }

@@ -7,14 +7,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
+import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthGuard } from './_helpers/auth.guard';
 import { RegisterComponent } from './register/register.component'
 import { ProductsComponent } from './products/products.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
-import { LoginDropdownComponent } from './header/login-dropdown/login-dropdown.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 //import { JwtInterceptor } from './_helpers/jwt.interceptor'
 //import { ErrorInterceptor } from './_helpers/error.interceptor'
 
@@ -29,7 +30,8 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     AboutComponent,
     ProductsComponent,
     RegisterComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +43,7 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
     HttpClientModule
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
   //{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   //{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
 ],

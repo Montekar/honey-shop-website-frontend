@@ -8,7 +8,7 @@ import { first } from 'rxjs/operators'
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: any;
+  allProducts: any;
   amount: number = 0
 
   constructor(private productService: ProductService) { }
@@ -16,7 +16,18 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAll()
       .pipe(first())
-      .subscribe(products => this.products = products)
+      .subscribe(products => this.allProducts = products)
   }
 
+  getHoneyProducts() {
+    return this.allProducts.filter( product => product.name.includes("Honey"));
+  }
+
+  getBreadProducts() {
+    return this.allProducts.filter( product => product.name.includes("Bread"));
+  }
+
+  getSoapProducts() {
+    return this.allProducts.filter( product => product.name.includes("Soap"));
+  }
 }
