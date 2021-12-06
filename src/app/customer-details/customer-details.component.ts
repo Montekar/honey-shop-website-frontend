@@ -11,8 +11,8 @@ import { NgForm } from '@angular/forms'
 })
 export class CustomerDetailsComponent implements OnInit {
   public customerDetails:CustomerDetail[] = [{ id: 1,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"10",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"},
-    { id: 2,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"10",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"},
-    { id: 3,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"10",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"}];
+    { id: 2,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"12",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"},
+    { id: 3,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"15",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"}];
   public editCustomerDetail:CustomerDetail;
   public deleteCustomerDetail: CustomerDetail;
 
@@ -58,6 +58,7 @@ export class CustomerDetailsComponent implements OnInit {
     var itemToUpdate = this.customerDetails.filter(value => value.id==detail.id)[0];
     var index = this.customerDetails.indexOf(itemToUpdate);
     this.customerDetails[index] = detail;
+    this.editCustomerDetail = null;
   }
 
   onDeleteCustomerDetail(deleteCustomerDetail: CustomerDetail) {
