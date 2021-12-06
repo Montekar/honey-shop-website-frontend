@@ -22,6 +22,14 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
       </li>
+      <li class ="dropdown" *ngIf='authenticationService.loggedIn()'><a>{{authenticationService.getUsername()}}</a>
+        <ul>
+          <li><a class="nav-link" routerLink="account/details">Manage Details</a></li>
+        </ul>
+      </li>
+      <li *ngIf='authenticationService.loggedIn()' class="nav-item">
+        <a class="nav-link" routerLink="/" (click)='onLogout()'>Log Out</a>
+      </li>
       <li class="nav-item">
         <app-login-dropdown></app-login-dropdown>
       </li>

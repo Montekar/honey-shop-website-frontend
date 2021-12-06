@@ -1,9 +1,9 @@
-export class CustomerDetails {
+export class CustomerDetail {
   id!: number;
   firstName!: string;
   lastName!: string;
-  email!: string;
   phoneNumber!: string;
+
   addressCountry!: string;
   addressCity!: string;
   addressPostCode!: number;
