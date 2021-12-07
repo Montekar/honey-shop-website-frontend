@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component'
 import { ProductsComponent } from './products/products.component'
 import { CustomerDetailsComponent } from './customer-details/customer-details.component'
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
+import { ContactComponent } from "./contact/contact.component"
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent,},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'products',component:ProductsComponent},
   {path:'account/details',component:CustomerDetailsComponent},
   {path:'cart',component:ShoppingCartComponent},
+  {path:'contact',component:ContactComponent},
 
   // otherwise redirect to home //canActivate:[AuthGuard]
   { path: '**', redirectTo: '' }

@@ -1,0 +1,51 @@
+
+.contact-info{
+  margin: auto;
+
+}
+
+.form{
+  margin: 50px;
+  padding: 50px 50px 50px 50px;
+}
+
+.box-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.whole{
+  display: flex;
+  padding: 80px 200px;
+
+}
+
+#social img, #contactUs img {
+  width: 40px;
+}
+
+#contactUs, #social, #quickLinks {
+  margin: 5px 15px;
+}
+
+#social div {
+  display: flex;
+}
+
+#social div img{
+  line-height: 100px;
+  padding: 10px 15px;
+}
+
+#social ul {
+  display: flex;
+}
+
+#social ul li, #quickLinks ul li, #contactUs ul li{
+  list-style-type: none;
+  padding: 5px 10px;
+}
+
+
