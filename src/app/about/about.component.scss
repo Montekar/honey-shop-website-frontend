@@ -1,3 +1,15 @@
+h1 {
+  text-align: center;
+}
+
+.carousel{
+  margin: 0 50px;
+}
+
+.max-img-size{
+  max-width: 100%;
+}
+
 .home-slides{
   padding-bottom: 20px;
 }
@@ -6,4 +18,36 @@
   display: flex;
   padding: 30px 200px;
 
+}
+
+.max-width-medium{
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .change-big{
+    padding: 250px;
+  }
+  .whole{
+    padding: 80px 20px;
+    flex-flow: row;
+  }
+  .max-width-medium{
+    max-width: 400px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .change-big{
+    padding: 50px;
+  }
+
+  .whole{
+    padding: 80px 20px;
+    flex-flow: column;
+  }
+
+  .max-width-medium{
+    max-width: 150px;
+  }
 }
