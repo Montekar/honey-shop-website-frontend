@@ -1,29 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
-import { AuthenticationService } from '../../_services/authentication.service'
 import { Router } from '@angular/router'
-import { catchError, first } from 'rxjs/operators'
-import { AuthService } from '../../auth/shared/auth.service'
-import { LoginDto } from '../../auth/shared/login.dto'
+import { AuthService } from '../shared/auth.service'
+import { LoginDto } from '../shared/login.dto'
+import { catchError } from 'rxjs/operators'
 import { throwError } from 'rxjs'
 
 @Component({
-  selector: 'app-login-dropdown',
-  templateUrl: './login-dropdown.component.html',
-  styleUrls: ['./login-dropdown.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class LoginDropdownComponent implements OnInit {
+export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   alert: boolean = false
-  public  jwt: string | null | undefined;
 
-  constructor(private formBuilder: FormBuilder,
-              public _auth:AuthService,
-              private router:Router) {
-    _auth.isLoggedIn$.subscribe(jwt =>{
-      this.jwt = jwt;
-    })
-  }
+  constructor(private formBuilder: FormBuilder, private _router:Router,private _auth:AuthService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -42,9 +34,10 @@ export class LoginDropdownComponent implements OnInit {
 
   onSubmit() {
     if (this.loginForm.invalid) {
-    return;
+      return;
     }
     const loginDto = this.loginForm.value as LoginDto;
+
 
     this._auth.login(loginDto).pipe(
       catchError(err => {
@@ -57,7 +50,7 @@ export class LoginDropdownComponent implements OnInit {
       .subscribe(token =>{
         if(token && token.jwt){
           this.loginForm.disable();
-          this.router.navigate(['home']);
+          this._router.navigate(['home']);
           this.loginForm.reset();
           this.loginForm.enable();
           this.alert = false;

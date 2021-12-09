@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col">
-    <div *ngIf='!authenticationService.loggedIn()' ngbDropdown class="d-inline-block">
+    <div *ngIf='!jwt' ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>Login</button>
       <div ngbDropdownMenu aria-labelledby="dropdownForm1" id="dropdownBox">
         <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -26,7 +26,7 @@
           <button class="btn btn-primary">Login</button>
         </form>
         <div class="dropdown-divider"></div>
-        <button routerLink='/register' ngbDropdownItem>New around here? Sign up</button>
+        <button routerLink='auth/register' ngbDropdownItem>New around here? Sign up</button>
         <button ngbDropdownItem>Forgot password?</button>
       </div>
     </div>

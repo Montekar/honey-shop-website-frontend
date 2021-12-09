@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../_services/authentication.service'
 import { Router } from '@angular/router'
 import { LoginDropdownComponent } from './login-dropdown/login-dropdown.component'
+import { AuthService } from '../auth/shared/auth.service'
+import { take } from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
@@ -10,15 +12,22 @@ import { LoginDropdownComponent } from './login-dropdown/login-dropdown.componen
 })
 export class HeaderComponent implements OnInit {
   isMenuCollapsed!: boolean;
+  public  jwt: string | null | undefined;
 
-  constructor(public authenticationService:AuthenticationService,private router:Router) { }
+  constructor(public _auth:AuthService,private router:Router) {
+    _auth.isLoggedIn$.subscribe(jwt =>{
+     this.jwt = jwt;
+    })
+  }
 
   ngOnInit(): void {
     this.isMenuCollapsed = true;
   }
 
   onLogout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/']);
+    this._auth.logout()
+      .subscribe(loggedOut => {
+        if (loggedOut) this.router.navigate(['/auth/login']);
+      });
   }
 }
