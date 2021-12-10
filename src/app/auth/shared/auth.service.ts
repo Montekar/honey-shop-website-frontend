@@ -4,7 +4,7 @@ import { LoginDto } from './login.dto'
 import { TokenDto } from './token.dto'
 import { BehaviorSubject, Observable, of } from 'rxjs'
 import { environment } from '../../../environments/environment'
-import { take, tap } from 'rxjs/operators'
+import { map, take, tap } from 'rxjs/operators'
 
 const jwtToken = "jwtToken";
 
@@ -13,7 +13,6 @@ const jwtToken = "jwtToken";
 })
 export class AuthService {
   isLoggedIn$ = new BehaviorSubject<string|null>(this.getToken());
-
   constructor(private _http:HttpClient) {}
 
   login(loginDto:LoginDto):Observable<TokenDto>{
@@ -30,6 +29,12 @@ export class AuthService {
         })
       );
   }
+  register(user) {
+    return this._http.post<any>(environment.apiUrl + '/auth/register', user).pipe(
+      map(user => user)
+    )
+  }
+
   logout(): Observable<boolean> {
     localStorage.removeItem(jwtToken);
     this.isLoggedIn$.next(null);
@@ -39,4 +44,37 @@ export class AuthService {
   getToken():string | null {
     return localStorage.getItem(jwtToken);
   }
+
+  getUserEmail():string{
+    var jsonObject = this.getPayload();
+    for(var key in jsonObject){
+      if(key == "UserEmail"){
+        return jsonObject[key];
+      }
+    }
+    return null;
+  }
+
+  getUserID():number{
+    var jsonObject = this.getPayload();
+    for(var key in jsonObject){
+      if(key == "UserId"){
+        return Number(jsonObject[key]);
+      }
+    }
+
+    return null;
+  }
+
+   private getPayload ():JSON {
+    var base64Url = this.getToken().split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+  };
+
+
 }

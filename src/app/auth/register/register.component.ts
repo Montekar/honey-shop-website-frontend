@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
-import { AuthenticationService } from '../../_services/authentication.service'
 import { Router } from '@angular/router'
 import { first, map } from 'rxjs/operators'
+import { AuthService } from '../shared/auth.service'
+import { LoginDto } from '../shared/login.dto'
+import { RegisterDto } from '../shared/register.dto'
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,7 @@ export class RegisterComponent implements OnInit {
   alert: boolean = false
   submitted:boolean = false;
 
-  constructor(private authenticationService: AuthenticationService,
+  constructor(private _auth:AuthService,
               private formBuilder: FormBuilder,
               private router: Router) {
   }
@@ -48,7 +50,9 @@ export class RegisterComponent implements OnInit {
     if (this.password.value != this.passwordConfirm.value) {
       return
     }
-    this.authenticationService.register(this.registerForm.value)
+    const registerDto = this.registerForm.value as RegisterDto;
+
+    this._auth.register(registerDto)
       .pipe(first())
       .subscribe({
         next: () => {
