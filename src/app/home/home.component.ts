@@ -6,10 +6,14 @@ import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-   imgArray : string[] = [
+  imgArray : string[] = [
     'assets/pictures/Double_Soup_Pack.jpg',
     'assets/pictures/Honey_and_Soup.jpg',
-    'assets/pictures/Stack_of_Honey.jpg'
+    'assets/pictures/Bee_Bread.jpg',
+    'assets/pictures/Harvesting.jpg',
+    'assets/pictures/Honey.jpg',
+    'assets/pictures/Honeycomb.jpg',
+    'assets/pictures/soaps.jpg'
   ];
 
   constructor(config: NgbCarouselConfig) {

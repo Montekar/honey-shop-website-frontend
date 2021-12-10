@@ -7,12 +7,20 @@ import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/1500/500`);
+  imgArray : string[] = [
+    'assets/pictures/Double_Soup_Pack.jpg',
+    'assets/pictures/Honey_and_Soup.jpg',
+    'assets/pictures/Bee_Bread.jpg',
+    'assets/pictures/Harvesting.jpg',
+    'assets/pictures/Honey.jpg',
+    'assets/pictures/Honeycomb.jpg',
+    'assets/pictures/soaps.jpg'
+  ];
 
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
-    config.interval = 5000;
-    config.wrap = false;
+    config.interval = 2000;
+    config.wrap = true;
     config.keyboard = false;
     config.pauseOnHover = false;
     config.showNavigationArrows = false;
