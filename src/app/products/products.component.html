@@ -18,17 +18,19 @@
                   </p>
                   <div>
                     <h5>Select Honey</h5>
-                    <span>
+                    <form [formGroup]="honeyForm">
+                      <span>
                       <label for="honeyType">Type:</label>
-                      <select name="type" id="honeyType">
-                        <option *ngFor="let product of getHoneyProducts()" value="{{product}}">{{product.description}}</option>
+                      <select name="type" id="honeyType" formControlName="honey">
+                        <option *ngFor="let product of getHoneyProducts()" [ngValue]="product">{{product.description}}</option>
                       </select>
                     </span>
-                    <span>
+                      <span>
                       <label for="honeyAmount">Amount:</label>
-                      <input type="number" id="honeyAmount" value="{{amount}}">
+                      <input type="number" id="honeyAmount" value="{{amount}}" formControlName="honeyAmount">
                     </span>
-                    <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
+                      <button class="cartBtn" type="submit"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart" (click)="addToShoppingCart('honey')">Add to cart</button>
+                    </form>
                   </div>
                 </div>
                 <div class="w-50 text-center mt-3">
@@ -94,7 +96,7 @@
                     </span>
                     <span>
                       <label for="soapAmount">Amount:</label>
-                      <input type="number" id="soapAmount" value="{{amount}}">
+                      <input type="number" id="soapAmount" value="{{amount}}" min="1" max="10">
                     </span>
                     <button class="cartBtn"><img src="./assets/images/shopping-cart.png" alt="Shopping Cart">Add to cart</button>
                   </div>

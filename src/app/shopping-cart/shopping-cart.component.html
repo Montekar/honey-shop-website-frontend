@@ -1,7 +1,12 @@
 <div class="container">
   <h3>Shopping Cart</h3>
   <hr>
-  <ul>
-    <li></li>
-  </ul>
+  <div *ngIf="allItems.length == 0">
+    <p>No items</p>
+  </div>
+  <div *ngIf="allItems">
+    <ul>
+      <li *ngFor="let cartItem of allItems">{{cartItem.id}} {{cartItem.product.name}} <button (click)="deleteItem(cartItem.id)">Delete</button></li>
+    </ul>
+  </div>
 </div>
