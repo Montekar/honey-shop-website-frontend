@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerDetailsService } from '../_services/customer-details.service'
-import { CustomerDetail } from '../_models/customerDetail'
-import { AuthenticationService } from '../_services/authentication.service'
 import { NgForm } from '@angular/forms'
+import { AuthService } from '../auth/shared/auth.service'
+import { CustomerDetailsService } from './shared/customer-details.service'
+import { HttpErrorResponse } from '@angular/common/http'
+import { DetailDto } from './shared/detail.dto'
+import { LoginDto } from '../auth/shared/login.dto'
 
 @Component({
   selector: 'app-customer-details',
@@ -10,22 +12,27 @@ import { NgForm } from '@angular/forms'
   styleUrls: ['./customer-details.component.scss']
 })
 export class CustomerDetailsComponent implements OnInit {
-  public customerDetails:CustomerDetail[] = [{ id: 1,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"10",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"},
-    { id: 2,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"12",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"},
-    { id: 3,addressCity:"Silale",addressCountry:"Lithuania",addressPostCode:7501, addressNumber:"15",addressStreet:"Poskos",phoneNumber:"+4532532",firstName:"Faustas",lastName:"Anulis"}];
-  public editCustomerDetail:CustomerDetail;
-  public deleteCustomerDetail: CustomerDetail;
+  public customerDetails:DetailDto[] = [];
+  public editCustomerDetail:DetailDto;
+  public deleteCustomerDetail: DetailDto;
 
-  constructor(private detailService:CustomerDetailsService, public auth:AuthenticationService) { }
+  constructor(private _detailService:CustomerDetailsService, public _auth:AuthService) { }
 
   public getCustomerDetails():void{
-    this.detailService.getAll().subscribe();
+    this._detailService.getAllUserDetails().subscribe(
+      (response: DetailDto[])=>{
+        this.customerDetails = response;
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message);
+      });
   }
 
   ngOnInit(): void {
+    this.getCustomerDetails();
   }
 
-  onOpenModal(detail:CustomerDetail,mode:string): void {
+  onOpenModal(detail:DetailDto,mode:string): void {
     const container = document.getElementById('main-container');
     const button = document.createElement('button');
     button.type = 'button';
@@ -47,27 +54,36 @@ export class CustomerDetailsComponent implements OnInit {
   }
 
   onAddCustomerDetail(addForm: NgForm): void {
-    var form = addForm.form.value;
-    var customerDetail = { id: 4,addressCity:form.city,addressPostCode:form.postCode,addressNumber:form.houseNumber,phoneNumber:form.phone,addressCountry:form.country,addressStreet:form.street,firstName:form.firstName,lastName:form.lastName};
-    this.customerDetails.push(customerDetail);
+    var detailDto = addForm.form.value as DetailDto;
+    this._detailService.addUserDetail(detailDto).subscribe(
+      (response:DetailDto) =>{
+        console.log(detailDto);
+        this.getCustomerDetails();
+      },
+      (error: HttpErrorResponse) => {
+        alert(error.message)
+      });
     document.getElementById('add-detail-form').click();
     addForm.reset();
   }
 
-  onUpdateCustomerDetail(detail:CustomerDetail) {
-    var itemToUpdate = this.customerDetails.filter(value => value.id==detail.id)[0];
-    var index = this.customerDetails.indexOf(itemToUpdate);
-    this.customerDetails[index] = detail;
-    this.editCustomerDetail = null;
+  onUpdateCustomerDetail(detail:DetailDto) {
+    this._detailService.updateDetail(detail).subscribe(
+      (response:DetailDto)=>{
+        this.getCustomerDetails();
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message)
+      });
   }
 
-  onDeleteCustomerDetail(deleteCustomerDetail: CustomerDetail) {
-    for( var i = 0; i < this.customerDetails.length; i++){
-
-      if ( this.customerDetails[i].id === deleteCustomerDetail.id) {
-
-        this.customerDetails.splice(i, 1);
-      }
-    }
+  onDeleteCustomerDetail(deleteCustomerDetail: DetailDto) {
+    this._detailService.deleteDetail(deleteCustomerDetail.id).subscribe(
+      (response:void)=>{
+        this.getCustomerDetails();
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message)
+      });
   }
 }

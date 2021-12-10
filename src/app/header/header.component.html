@@ -23,8 +23,7 @@
         <a class="nav-link" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
       </li>
       <li class ="dropdown" *ngIf='jwt'><a>
-        <!-- {{_authService.getUsername()}}-->
-        User Email
+          {{_auth.getUserEmail()}}
       </a>
          <ul>
            <li><a class="nav-link" routerLink="account/details">Manage Details</a></li>

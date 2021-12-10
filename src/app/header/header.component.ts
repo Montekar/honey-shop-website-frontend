@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../_services/authentication.service'
 import { Router } from '@angular/router'
-import { LoginDropdownComponent } from './login-dropdown/login-dropdown.component'
 import { AuthService } from '../auth/shared/auth.service'
-import { take } from 'rxjs/operators'
 
 @Component({
   selector: 'app-header',
