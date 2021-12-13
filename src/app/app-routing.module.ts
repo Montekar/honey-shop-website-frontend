@@ -7,6 +7,7 @@ import { CustomerDetailsComponent } from './customer-details/customer-details.co
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
 import { ContactComponent } from "./contact/contact.component"
 import { AuthGuard } from './auth/guards/auth.guard'
+import { CheckoutComponent } from "./checkout/checkout.component"
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'account/details', component: CustomerDetailsComponent,canActivate:[AuthGuard]},
   { path: 'cart', component: ShoppingCartComponent },
+  {path:'checkout',component:CheckoutComponent},
   { path: 'contact', component: ContactComponent },
  { path: 'auth', loadChildren: () => import ('./auth/auth.module').then(v => v.AuthModule) },
 
