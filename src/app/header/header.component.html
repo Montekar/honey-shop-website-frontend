@@ -1,6 +1,6 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light nav-top">
   <a class="navbar-brand max-height" [routerLink]="'.'">
-    <img src="../../assets/images/logo.png" alt="">
+    <img class="vibrate-1" src="../../assets/pictures/newLogo.png" alt="">
   </a>
   <h2>Honey Shop</h2>
 
@@ -8,19 +8,19 @@
     &#9776;
   </button>
 
-  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-end" id="navbarItems">
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse justify-content-end make-big" id="navbarItems">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="../home" (click)="isMenuCollapsed = true">Home</a>
+        <a class="nav-link link-great" routerLink="../home" (click)="isMenuCollapsed = true">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="../about" (click)="isMenuCollapsed = true">About</a>
+        <a class="nav-link link-great" routerLink="../about" (click)="isMenuCollapsed = true">About</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="../products" (click)="isMenuCollapsed = true">Products</a>
+        <a class="nav-link link-great" routerLink="../products" (click)="isMenuCollapsed = true">Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
+        <a class="nav-link link-great" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
       </li>
       <li class ="dropdown" *ngIf='jwt'><a>
           {{_auth.getUserEmail()}}
