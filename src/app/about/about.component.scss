@@ -2,8 +2,11 @@ h1 {
   text-align: center;
 }
 
+.max-width{
+  max-width: 1300px;
+}
+
 .carousel{
-  margin: 0 50px;
 }
 
 .max-img-size{
@@ -19,7 +22,8 @@ h1 {
 
 .whole{
   display: flex;
-  padding: 30px 200px;
+  margin-bottom: 50px;
+  margin-top: 25px;
 }
 
 .max-width-medium{
@@ -92,4 +96,92 @@ h1 {
   100% {
     background: #fff5cc;
   }
+}
+
+-------
+
+.contact {
+  padding-bottom: 100px;
+}
+.contact .heading {
+  margin-bottom: 50px;
+}
+.contact .heading h2 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #F7D35B;
+}
+.contact .heading h2 span {
+  color: black;
+  font-weight: 300;
+}
+.contact .heading p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #525f7f;
+  line-height: 26px;
+  margin: 0;
+}
+.contact .main {
+  background: #ffffff;
+  box-shadow: 1px 1px 20px 0 rgba(0,0,0,0.08);
+}
+.contact .main h3 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4a545e;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.contact .form-control {
+  padding: 25px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  background: #f8f8f9;
+  border: 0;
+  border-radius: 5px;
+}
+.contact button.btn {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  //background: linear-gradient(to right, rgba(255,255,51,1) 0%, rgba(247,211,91,1) 100%);
+  background: #F7D35B;
+  color: black;
+}
+
+.contact .main .left {
+  padding: 75px 50px;
+}
+.contact .main .right {
+  //background: linear-gradient(to right, rgba(247,211,91,1) 0%, rgba(255,255,51,1) 100%);
+  background: #F7D35B;
+  background-size: cover;
+  padding: 40px;
+  color: black;
+  height: 100%;
+}
+.contact .main .right h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+.contact .main .right .info {
+  margin-bottom: 35px;
+}
+.contact .main .right .info i {
+  font-size: 25px;
+  color: #ffffff;
+}
+.contact .main .right .info span {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-left: 15px;
+}
+.contact .main .right .social a {
+  text-decoration: none;
+  font-size: 30px;
+  color: #ffffff;
+  margin-right: 20px;
 }
