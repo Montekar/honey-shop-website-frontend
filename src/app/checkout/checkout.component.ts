@@ -10,7 +10,7 @@ import { CustomerDetailsService } from "../customer-details/shared/customer-deta
 })
 export class CheckoutComponent implements OnInit {
   public customerDetails:DetailDto[] = [];
-  public stum
+  selectedDetail;
 
   constructor(private _detailService:CustomerDetailsService) { }
 
@@ -28,4 +28,7 @@ export class CheckoutComponent implements OnInit {
     this.getCustomerDetails();
   }
 
+  submitOrder() {
+console.log(this.selectedDetail)
+  }
 }
