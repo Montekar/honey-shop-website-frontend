@@ -1,5 +1,6 @@
 .copy{
   cursor: pointer;
+  margin: 10px;
 }
 
 li{
@@ -31,7 +32,7 @@ img{
 
 .whole{
   display: flex;
-  padding: 80px 200px;
+  padding: 30px 125px;
 
 }
 
@@ -59,6 +60,7 @@ img{
 #social ul li, #quickLinks ul li, #contactUs ul li{
   list-style-type: none;
   padding: 5px 10px;
+  align-items: center;
 }
 
 .change-big{
