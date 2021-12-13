@@ -8,6 +8,9 @@ h1 {
 
 .max-img-size{
   max-width: 100%;
+  width: 800px;
+  height: 800px;
+  //clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
 .home-slides{
@@ -17,7 +20,6 @@ h1 {
 .whole{
   display: flex;
   padding: 30px 200px;
-
 }
 
 .max-width-medium{
@@ -49,5 +51,45 @@ h1 {
 
   .max-width-medium{
     max-width: 150px;
+  }
+}
+
+.color-change-5x {
+  -webkit-animation: color-change-5x 6s linear infinite alternate both;
+  animation: color-change-5x 6s linear infinite alternate both;
+}
+
+@-webkit-keyframes color-change-5x {
+  0% {
+    background: #ffcc00;
+  }
+  25% {
+    background: #ffd633;
+  }
+  50% {
+    background: #ffe066;
+  }
+  75% {
+    background: #ffeb99;
+  }
+  100% {
+    background: #fff5cc;
+  }
+}
+@keyframes color-change-5x {
+  0% {
+    background: #ffcc00;
+  }
+  25% {
+    background: #ffd633;
+  }
+  50% {
+    background: #ffe066;
+  }
+  75% {
+    background: #ffeb99;
+  }
+  100% {
+    background: #fff5cc;
   }
 }
