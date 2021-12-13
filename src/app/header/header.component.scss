@@ -1,6 +1,14 @@
+$red: #F37272;
+$brown: #584E4A;
+$whitey: #f0f0f0;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
 #navbar {
-  background-color:  #FCE7A7!important;
-  height: 10vh;
+  //background-color:  #FCE7A7!important;
+  height: 12vh;
   z-index: 999;
 }
 
@@ -14,21 +22,57 @@
 }
 
 #navbarItems ul li a {
-  font-size: 24px;
-  background: -webkit-linear-gradient(#f1abab, #123062);
+  font-size: 32px;
+  background: #515050;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: #F7D35B;
+  }
+  &:before {
+    opacity: 0;
+    transform: translateY(- $distance);
+    transition: transform 0s $easeOutBack, opacity 0s;
+  }
+  &:after {
+    opacity: 0;
+    transform: translateY($distance/2);
+    transition: transform $duration $easeOutBack, opacity $duration;
+  }
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &:before {
+      transition: transform $duration $easeOutBack, opacity $duration;
+    }
+    &:after {
+      transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+    }
+  }
 }
 
-#navbarItems ul li a:hover{
-  font-size: 28px;
-  text-decoration: underline white;
-}
 
 .max-height{
-  max-height: 90px;
+  margin-bottom: 20px;
+  max-height: 125px;
 }
 
 ul{
@@ -64,3 +108,80 @@ ul li:hover ul{
 @media only screen and (max-width: 800px){
 
 }
+
+.line{
+  width: 800px;
+  border-bottom: 1px solid black;
+  position: absolute;
+}
+
+.vibrate-1 {
+  -webkit-animation: vibrate-1 0.3s steps(5, end) 10s both;
+  animation: vibrate-1 0.3s steps(5, end) 10s both;
+}
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+.make-big{
+  border-bottom: 1px solid black;
+  height: 100%;
+  margin: 0 125px;
+
+  align-items: end;
+}
+
+.nav-top{
+  margin-top: 50px;
+}
+

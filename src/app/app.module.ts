@@ -16,7 +16,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
-import { CheckoutComponent } from './checkout/checkout.component'
+import { ContactComponent } from "./contact/contact.component";
+import { CheckoutComponent } from './checkout/checkout.component';
 //import { JwtInterceptor } from './_helpers/jwt.interceptor'
 //import { ErrorInterceptor } from './_helpers/error.interceptor'
 
@@ -33,7 +34,8 @@ import { CheckoutComponent } from './checkout/checkout.component'
     RegisterComponent,
     CustomerDetailsComponent,
     ShoppingCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

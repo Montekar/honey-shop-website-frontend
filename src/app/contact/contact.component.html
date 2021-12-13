@@ -1,37 +1,76 @@
 
   <div class="box-wrapper" class="whole">
 
-    <div class="container">
-      <h1 >Submit Form</h1>
-      <form target="_blank" action="https://formsubmit.co/b6f5a3ba3aa3f18733c893ba7550cfd2" method="POST">
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col">
-              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="heading text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+          <h2>
+            <span>Give us a</span>
+            Buzz</h2>
+        </div>
+        <div class="main wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="row">
+            <!-- Left -->
+            <div class="col-lg-4">
+              <div class="right">
+                <h4>Every message is welcome!</h4>
+                <div class="info d-flex align-items-center">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <span><p>If you have any questions about our products do not hesitate to contacts us</p></span>
+                </div>
+                <div class="info d-flex align-items-center">
+                  <i class="fa fa-chrome" aria-hidden="true"></i>
+                  <span><p>If you have any special requests for soaps we would be pleased to fulfill it</p></span>
+                </div>
+                <div class="info d-flex align-items-center">
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  <span><p>If you would like to be informed about fresh honey harvesting let us know</p></span>
+                </div>
+              </div>
             </div>
-            <div class="col">
-              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            <div class="col-lg-8 left">
+              <h3>Contact form</h3>
+              <form target="_blank" action="https://formsubmit.co/b6f5a3ba3aa3f18733c893ba7550cfd2" method="POST">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                </div>
+                <button class="btn btn-block btn btn-lg btn-dark btn-block" type="submit">Send Now!</button>
+              </form>
             </div>
+
           </div>
         </div>
-        <div class="form-group">
-          <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-      </form>
-    </div>
+      </div>
+    </section>
 
     <div class="col contact-info ">
       <div id="contactUs">
-        <ul>
-          <li class="slide-in-right1"><img src="../../assets/phone-call.png" alt=""> +37063908107</li>
-          <li class="slide-in-right2"><img src="../../assets/gmail.png" alt=""> pasbites@gmail.com</li>
-          <li class="slide-in-right3"><a href="https://www.instagram.com/pasbites/"><img src="../../assets/facebook.png" alt=""></a> Facebook</li>
-          <li class="slide-in-right4"><a href="https://www.facebook.com/pasbites/"><img src="../../assets/instagram.png" alt=""></a> Instagram</li>
+        <ul class="social">
+          <li class="slide-in-right1"><img src="../../assets/phone-call.png" alt=""> +37063908107
+            <h3 class="copy" (click)="copyMessage('+37063908107')" value="click to copy" > 📄</h3>
+          </li>
+          <li class="slide-in-right2"><img src="../../assets/gmail.png" alt=""> pasbites@gmail.com
+            <h3 class="copy" (click)="copyMessage('pasbites@gmail.com')" value="click to copy" > 📄</h3>
+          </li>
+          <li class="slide-in-right3"><a href="https://www.facebook.com/pasbites/"><img src="../../assets/facebook.png" alt=""></a> Facebook
+            <h3 class="copy" (click)="copyMessage('https://www.facebook.com/pasbites//')" value="click to copy" > 📄</h3>
+          </li>
+          <li class="slide-in-right4"><a href="https://www.instagram.com/pasbites/"><img src="../../assets/instagram.png" alt=""></a> Instagram
+            <h3 class="copy" (click)="copyMessage('https://www.instagram.com/pasbites/')" value="click to copy" > 📄</h3>
+          </li>
         </ul>
       </div>
     </div>
 
   </div>
+
 
 
