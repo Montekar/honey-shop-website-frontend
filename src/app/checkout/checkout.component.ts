@@ -10,6 +10,7 @@ import { CustomerDetailsService } from "../customer-details/shared/customer-deta
 })
 export class CheckoutComponent implements OnInit {
   public customerDetails:DetailDto[] = [];
+  public stum
 
   constructor(private _detailService:CustomerDetailsService) { }
 
