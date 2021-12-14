@@ -13,14 +13,17 @@ import { Router } from '@angular/router'
 })
 export class ShoppingCartComponent implements OnInit {
   allItems: any;
-  products:ProductCart[];
+  products:ProductCart[] = [];
   totalPrice:number = 0;
 
   constructor(private cartService:ShoppingCartService, private _router:Router) { }
 
   ngOnInit(): void {
-    this.products = this.cartService.getCart().products;
+    var cart = this.cartService.getCart();
+    if(cart!=null){
+    this.products = cart.products;
     this.calculateTotalPrice();
+    }
   }
 
   onQuantityChanged() {
