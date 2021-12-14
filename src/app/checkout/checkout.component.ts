@@ -4,6 +4,7 @@ import { HttpErrorResponse } from "@angular/common/http"
 import { CustomerDetailsService } from "../customer-details/shared/customer-details.service"
 import { ShoppingCartService } from '../shopping-cart/shared/shopping-cart.service'
 import { ProductCart } from '../shopping-cart/shared/product-cart'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-checkout',
@@ -14,7 +15,7 @@ export class CheckoutComponent implements OnInit {
   public customerDetails:DetailDto[] = [];
   selectedDetail;
 
-  constructor(private _detailService:CustomerDetailsService,private cartService:ShoppingCartService) { }
+  constructor(private _detailService:CustomerDetailsService,private cartService:ShoppingCartService,private _router:Router) { }
   products:ProductCart[];
   totalPrice:number = 0;
 
@@ -30,6 +31,11 @@ export class CheckoutComponent implements OnInit {
   ngOnInit(): void {
     this.getCustomerDetails();
     this.products = this.cartService.getCart().products;
+
+    if(this.products==null || this.products.length<=0){
+      console.log("its null")
+      this._router.navigate(['cart']);
+    }
     this.calculateTotalPrice();
   }
 
