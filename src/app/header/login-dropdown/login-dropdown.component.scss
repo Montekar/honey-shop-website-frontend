@@ -7,6 +7,11 @@ $duration: .2s;
 $distance: 8px;
 $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
+.yellow{
+  background-color: #F7D35B;
+  border-color: #F7D35B;
+}
+
 #dropdownBox {
   margin-left: -150px;
 }
