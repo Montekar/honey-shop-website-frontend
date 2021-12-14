@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../_services/product.service'
 import { first } from 'rxjs/operators'
 import { FormBuilder, FormGroup } from '@angular/forms'
-import { ShoppingCartService } from '../_services/shopping-cart.service'
-import { ShoppingCartItem } from '../_models/shoppingCartItem'
+import { ShoppingCartService } from '../shopping-cart/shared/shopping-cart.service'
+import { ProductService } from './shared/product.service'
+import { ProductCart } from '../shopping-cart/shared/product-cart'
+import { Product } from '../_models/product'
 
 @Component({
   selector: 'app-products',
@@ -14,10 +15,11 @@ export class ProductsComponent implements OnInit {
   allProducts: any;
   amount: number = 0;
   honeyForm: FormGroup;
+  breadForm: FormGroup;
+  soapForm: FormGroup;
 
   constructor(private productService: ProductService,
-              private shoppingCartService: ShoppingCartService,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,private cartService:ShoppingCartService) { }
 
   ngOnInit(): void {
     this.productService.getAll()
@@ -27,6 +29,14 @@ export class ProductsComponent implements OnInit {
     this.honeyForm = this.formBuilder.group({
       honey: [null],
       honeyAmount: [null]
+    })
+    this.breadForm = this.formBuilder.group({
+      bread: [null],
+      breadAmount: [null]
+    })
+    this.soapForm = this.formBuilder.group({
+      soap: [null],
+      soapAmount: [null]
     })
   }
 
@@ -42,22 +52,24 @@ export class ProductsComponent implements OnInit {
     return this.allProducts.filter( product => product.name.includes("Soap"));
   }
 
-  addToShoppingCart(type: string) {
-    let item = new ShoppingCartItem();
-    if (type === "honey"){
-      item.product = this.honeyForm.value.honey;
-      item.amount = this.honeyForm.value.honeyAmount;
+  addToShoppingCart(type:string) {
+    var product;
+    var quantity;
+    if(type=="honey"){
+      product = this.honeyForm.value.honey;
+      quantity = this.honeyForm.value.honeyAmount;
     }
-
-    this.shoppingCartService.addItem(item)
-      .pipe(first())
-      .subscribe(
-        data => {
-          console.log("Yey");
-        },
-        error => {
-          console.log("Nah")
-        }
-      )
+    if(type=="soap"){
+      product = this.soapForm.value.soap;
+      quantity = this.soapForm.value.soapAmount;
+    }
+    if(type=="bread"){
+      product = this.breadForm.value.bread;
+      quantity = this.breadForm.value.breadAmount;
+    }
+    if(product ==null || quantity==null || quantity <= 0){
+      console.log("incorrect form");
+    }
+    this.cartService.addToCart(product,quantity);
   }
 }

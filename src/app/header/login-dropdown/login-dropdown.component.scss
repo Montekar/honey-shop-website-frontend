@@ -27,6 +27,7 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   -webkit-text-fill-color: transparent;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
+  cursor: pointer;
 
   position: relative;
   text-transform: uppercase;
@@ -78,6 +79,6 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 
 
 .add-padding{
-
   padding: 10px;
 }
+

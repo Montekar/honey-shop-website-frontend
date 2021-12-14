@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'account/details', component: CustomerDetailsComponent,canActivate:[AuthGuard]},
-  { path: 'cart', component: ShoppingCartComponent },
-  {path:'checkout',component:CheckoutComponent},
+  { path: 'cart', component: ShoppingCartComponent,canActivate:[AuthGuard]},
+  {path:'checkout',component:CheckoutComponent,canActivate:[AuthGuard]},
   { path: 'contact', component: ContactComponent },
  { path: 'auth', loadChildren: () => import ('./auth/auth.module').then(v => v.AuthModule) },
 
