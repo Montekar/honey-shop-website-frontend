@@ -14,3 +14,21 @@
     text-align: left;
   }
 }
+
+ul{
+  position:relative;
+  width: 450px;
+  box-sizing: border-box;
+}
+ul li{
+  display: flex;
+  background: #fce7a7;
+  font-weight: bold;
+  padding:10px 20px;
+  color:black;
+  transition: .5s;
+}
+ul li span:nth-child(2){
+  text-align: right;
+}
+

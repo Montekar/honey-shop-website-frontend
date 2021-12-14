@@ -4,6 +4,7 @@ import { ShoppingCartService } from './shared/shopping-cart.service'
 import { Product } from '../_models/product'
 import { ProductCart } from './shared/product-cart'
 import { Cart } from './shared/cart'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-shopping-cart',
@@ -15,7 +16,7 @@ export class ShoppingCartComponent implements OnInit {
   products:ProductCart[];
   totalPrice:number = 0;
 
-  constructor(private cartService:ShoppingCartService) { }
+  constructor(private cartService:ShoppingCartService, private _router:Router) { }
 
   ngOnInit(): void {
     this.products = this.cartService.getCart().products;
@@ -43,5 +44,9 @@ export class ShoppingCartComponent implements OnInit {
       sum+= product.quantity * product.product.price;
     }
     this.totalPrice = sum;
+  }
+
+  onCheckoutClick() {
+    this._router.navigate(['checkout']);
   }
 }

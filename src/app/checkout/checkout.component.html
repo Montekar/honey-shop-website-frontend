@@ -11,7 +11,18 @@
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body"></div>
+          <div class="accordion-body">
+            <h5>Your products:</h5>
+
+
+            <ul *ngFor='let product of products'>
+              <li>
+                <span class='product'>{{product.product.name}}: {{product.product.description}} <br>Quantity: {{product.quantity}}</span>
+              </li>
+            </ul>
+            <h5>Total: {{totalPrice}} DKK</h5>
+
+          </div>
         </div>
       </div>
       <div class="accordion-item">
