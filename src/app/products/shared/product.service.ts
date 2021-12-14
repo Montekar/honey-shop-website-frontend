@@ -1,8 +1,8 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {Product} from "../_models/product";
-import {environment} from "../../environments/environment";
+import {Product} from "../../_models/product";
+import {environment} from "../../../environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class ProductService {

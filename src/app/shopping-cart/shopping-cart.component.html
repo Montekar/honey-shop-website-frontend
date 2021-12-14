@@ -1,12 +1,38 @@
-<div class="container">
-  <h3>Shopping Cart</h3>
-  <hr>
-  <div *ngIf="allItems.length == 0">
-    <p>No items</p>
+<div *ngIf='products.length>0' class='"small-container' xmlns:bind='http://www.w3.org/1999/xhtml'>
+  <table>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </tr>
+    <tr *ngFor='let product of products'>
+      <td><div class='cart-info'>
+        <img src='assets/images/package.png' alt=''>
+        <div>
+          <p>{{product.product.name}} - {{product.product.description}}</p>
+          <small>Price: {{product.product.price}} DKK</small>
+          <br>
+          <a class='remove-link' (click)='removeProduct(product)'>Remove</a>
+        </div>
+      </div></td>
+      <td><input type='number' min='1' max='1000' [(ngModel)]='product.quantity' (change)='onQuantityChanged()'></td>
+      <td>{{product.quantity * product.product.price}} DKK</td>
+    </tr>
+  </table>
+  <div class='total-price'>
+    <table>
+      <tr>
+        <td>Total:</td>
+        <td>{{totalPrice}} DKK</td>
+        <td><button type='submit' class='checkout-btn'>Checkout</button></td>
+      </tr>
+    </table>
   </div>
-  <div *ngIf="allItems">
-    <ul>
-      <li *ngFor="let cartItem of allItems">{{cartItem.id}} {{cartItem.product.name}} <button (click)="deleteItem(cartItem.id)">Delete</button></li>
-    </ul>
+</div>
+
+<div *ngIf="products.length<=0" class="col-lg-12 col-md-12 col-xl-12">
+  <div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">Your cart is empty!</h4>
+    <p>No items found!</p>
   </div>
 </div>

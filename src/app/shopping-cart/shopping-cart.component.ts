@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from '../_services/shopping-cart.service'
 import { first } from 'rxjs/operators'
-import { ShoppingCartItem } from '../_models/shoppingCartItem'
+import { ShoppingCartService } from './shared/shopping-cart.service'
+import { Product } from '../_models/product'
+import { ProductCart } from './shared/product-cart'
+import { Cart } from './shared/cart'
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,21 +12,36 @@ import { ShoppingCartItem } from '../_models/shoppingCartItem'
 })
 export class ShoppingCartComponent implements OnInit {
   allItems: any;
+  products:ProductCart[];
+  totalPrice:number = 0;
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private cartService:ShoppingCartService) { }
 
   ngOnInit(): void {
-    this.shoppingCartService.getAll()
-      .pipe(first())
-      .subscribe(cartItems => this.allItems = cartItems)
+    this.products = this.cartService.getCart().products;
+    this.calculateTotalPrice();
   }
 
-  deleteItem(id: number){
-    this.shoppingCartService.deleteItem(id)
+  onQuantityChanged() {
+    var cart:Cart={products:this.products};
+    this.cartService.updateCart(cart);
+    this.calculateTotalPrice();
   }
 
-  updateItem(item: ShoppingCartItem){
-    this.shoppingCartService.updateItem(item)
+  removeProduct(product: ProductCart) {
+    var index = this.products.findIndex(value => value.product.id == product.product.id);
+    this.products.splice(index, 1);
+
+      var cart:Cart={products:this.products};
+      this.cartService.updateCart(cart);
+      this.calculateTotalPrice();
   }
 
+  calculateTotalPrice(){
+    var sum = 0;
+    for(var product of this.products){
+      sum+= product.quantity * product.product.price;
+    }
+    this.totalPrice = sum;
+  }
 }
