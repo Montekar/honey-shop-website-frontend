@@ -1,5 +1,10 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
+.bg-dark {
+  background-color: #F7D35B !important;
+  margin-top: 25px;
+}
+
 body {
   background: #f5f5f5;
 }
@@ -31,10 +36,29 @@ h6 {
 }
 
 a {
+  font-size: 20px;
   color: #707070;
 }
 i {
   color: white;
 }
 
+ul{
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
 
+.background{
+  background-color: #F7D35B;
+  width: 300px;
+}
+
+.black{
+  color: #111111;
+  margin-left: 50px;
+}
+
+.navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .nav-link.active {
+  color: black;
+}

@@ -1,7 +1,7 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<body [ngStyle]="{'background-color':customerDetails?.length==0 ? 'white':'lightseagreen'}">
+<body [ngStyle]="{'background-color':customerDetails?.length==0 ? 'white':'white'}">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" style="color:white;">Address Manager</a>
+  <a class="navbar-brand black">Address Manager</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,7 +24,7 @@
 <div class="container" id ="main-container">
   <div class="row">
     <div *ngFor='let details of customerDetails' class="col-md-6 col-xl-3">
-      <div class="card m-b-30">
+      <div class="card m-b-30 background">
         <div class="card-body row">
           <div class="col-6">
             <a href=""><img src="../../assets/images/location.png" alt="" class="img-fluid rounded-circle w-60"></a>

@@ -11,8 +11,8 @@ table{
 th{
   text-align: left;
   padding: 5px;
-  color:#fff;
-  background: #ff523b;
+  color: #111111;
+  background: #F7D35B;
 }
 td{
   padding: 10px 5px;
@@ -24,7 +24,7 @@ td input{
 }
 
 td a{
-  color: #ff523b;
+  color: #F7D35B;
   font-size: 12px;
 }
 td img{
@@ -39,7 +39,7 @@ td img{
 }
 
 .total-price table{
-  border-top: 3px solid #ff523b;
+  border-top: 3px solid #F7D35B;
   width:100%;
   max-width:20em;
 }
@@ -50,8 +50,8 @@ th:last-child{
   text-align: right;
 }
 .checkout-btn{
-  background-color: #ff523b;
-  color:white;
+  background-color: #F7D35B;
+  color: #111111;
   font-weight: bold;
   border:none;
   border-radius:5em;
