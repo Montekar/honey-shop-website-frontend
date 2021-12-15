@@ -1,10 +1,10 @@
 div {
-  height: 80vh;
+  //height: 80vh;
 }
 
 #productsNav {
-  background-color: #123062;
-  color: white;
+  background-color: #F7D35B;
+  color: black;
   position: relative;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
@@ -12,15 +12,13 @@ div {
 
 #productsNav div {
   position: absolute;
-  top: 80%;
+  top: 30%;
   left: 45%;
   transform: translate(-50%, -50%);
 }
 
 #productsNav div span {
-  font-size: 32px;
-  text-underline-offset: 2px;
-  text-decoration: underline 2px gray;
+  font-size: 40px;
 }
 
 #productsNav div ul li a {
@@ -55,13 +53,12 @@ div {
 }
 
 .productView div {
-  background: rgb(221, 215, 102);
-  background: linear-gradient(90deg, rgba(221, 215, 102, 1) 0%, rgba(226, 209, 7, 1) 35%, rgba(162, 152, 35, 1) 100%);
-  margin: 150px 0 0;
+  background: #F7D35B;
+  margin: 50px 0 0;
   position: relative;
   border: 2px solid chocolate;
   border-radius: 25px;
-  height: 25%;
+  //height: 25%;
 }
 
 .productView div h5 {
@@ -96,7 +93,7 @@ div {
   background: transparent;
   border: none;
   bottom: 15px;
-  right: 25px;
+  right: 5px;
 }
 
 .cartBtn:hover {
@@ -106,8 +103,8 @@ div {
 }
 
 .image {
-  height: 75vh;
-  border-radius: 25px;
+  height: 60vh;
+  //border-radius: 25px;
 }
 
 .cartBtn img {
@@ -116,4 +113,21 @@ div {
   padding: 5px 10px;
 }
 
+.whole {
+  background: #ffffff;
+  box-shadow: 1px 1px 20px 0 rgba(0,0,0,0.08);
+  margin: 50px;
+}
 
+a{
+  color: #111111;
+}
+
+a:hover{
+  text-underline-offset: 2px;
+  text-decoration: #111111;
+}
+
+.margin{
+  margin: 20px;
+}

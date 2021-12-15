@@ -22,9 +22,7 @@
       <li class="nav-item">
         <a class="nav-link link-great" routerLink="../contact" (click)="isMenuCollapsed = true">Contact</a>
       </li>
-      <li class ="dropdown" *ngIf='jwt'><a>
-          {{_auth.getUserEmail()}}
-      </a>
+      <li class ="dropdown" *ngIf='jwt'><a hidden>{{_auth.getUserEmail()}}</a><a>Account</a>
          <ul>
            <li><a class="nav-link" routerLink="account/details">Manage Details</a></li>
            <a class="nav-link" routerLink="/" (click)='onLogout()'>Log Out</a>
