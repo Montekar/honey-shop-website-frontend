@@ -1,10 +1,25 @@
-<h2 *ngIf="isAddMode">Create new product</h2>
-<h2 *ngIf="!isAddMode">Edit product</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <input type="text" formControlName="name">
-  <textarea formControlName="description"></textarea>
-  <input type="number" formControlName="price">
-  <input type="submit" value="Save">
+<section class="contact whole" id="contact">
+  <div class="container max-width">
+    <div class="heading text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+      <h2 *ngIf="isAddMode">Create new product</h2>
+      <h2 *ngIf="!isAddMode">Edit product</h2>
+    </div>
+    <div class="main wow fadeInUp center" style="visibility: visible; animation-name: fadeInUp;">
+      <div class="innerForm">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+              <p>Name</p>
+              <input type="text" formControlName="name">
+              <p>Description</p>
+              <textarea formControlName="description"></textarea>
+              <p>Price</p>
+              <input type="number" formControlName="price">
+                <div>
+                  <input type="submit" value="Save" class="saveButton">
 
-  <a routerLink="/admin">Cancel</a>
-</form>
+                  <a routerLink="/admin" class="cancelButton">Cancel</a>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</section>
