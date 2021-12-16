@@ -14,7 +14,9 @@ export class ShoppingCartService {
   getCart():Cart{
     return JSON.parse(localStorage.getItem('cart'));
   }
-
+  clearCart(){
+    localStorage.removeItem("cart")
+  }
   updateCart(updateCart:Cart){
     localStorage.setItem('cart',JSON.stringify(updateCart));
   }
@@ -30,9 +32,6 @@ export class ShoppingCartService {
       }
       localStorage.setItem('cart',JSON.stringify(cart));
     }
-
-
-
       var retrieved:Cart = JSON.parse(localStorage.getItem('cart'));
       var ar = retrieved.products.filter(value => value.product.id == addProduct.id);
 
