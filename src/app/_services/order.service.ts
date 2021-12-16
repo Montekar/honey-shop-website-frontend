@@ -14,4 +14,20 @@ export class OrderService {
   create(order: Order) {
     return this.http.post(`${environment.apiUrl}/order`, order);
   }
+
+  getAll() {
+    return this.http.get<Order>(`${environment.apiUrl}/order`);
+  }
+
+  getById(id: number) {
+    return this.http.get<Order>(`${environment.apiUrl}/order/${id}`);
+  }
+
+  update(order: Order) {
+    return this.http.put(`${environment.apiUrl}/order`, order);
+  }
+
+  delete(id: number) {
+    return this.http.delete(`${environment.apiUrl}/order/${id}`);
+  }
 }
