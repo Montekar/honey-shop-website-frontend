@@ -1,4 +1,4 @@
-<header style='text-align:center'><h1>Registration</h1></header>
+<header style='text-align:center' class="theme"><h1>Registration</h1></header>
 <body>
 <div *ngIf="submitted && alert" class="alert alert-success alert-dismissible fade show" role="alert">
   <strong>Success!</strong> Account has been registered!
@@ -35,6 +35,6 @@
       <div *ngIf='passwordConfirm.errors?.required'>Can't be empty!</div>
     </div>
   </div>
-      <button type="submit" class="btn btn-primary">Register</button>
+      <button type="submit" class="btn btn-primary yellow">Register</button>
     </form>
 </body>

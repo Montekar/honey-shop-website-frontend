@@ -6,24 +6,14 @@ h1 {
   max-width: 1300px;
 }
 
-.carousel{
-}
-
-.max-img-size{
-  max-width: 100%;
-  width: 800px;
-  height: 800px;
-  //clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-
 .home-slides{
   padding-bottom: 20px;
 }
 
 .whole{
   display: flex;
-  margin-bottom: 50px;
-  margin-top: 25px;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .max-width-medium{
@@ -187,17 +177,17 @@ h1 {
 }
 
 .center{
-  max-width: 800px;
+  max-width: 705px;
   margin-left: auto;
   margin-right: auto;
 }
 
 th{
-  padding: 1px 40px 5px 10px;
+  padding: 5px 40px 5px 10px;
 }
 
 td{
-  padding: 1px 40px 5px 10px;
+  padding: 5px 40px 5px 10px;
 }
 
 ul{
@@ -205,7 +195,7 @@ ul{
 }
 
 li{
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 a{
@@ -213,20 +203,25 @@ a{
 }
 
 .radius{
-  border-radius: 25px;
+  border-radius: 15px;
 }
 
 .navRadius{
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .adjust{
   text-align: center;
   font-size: 24px;
-  margin: 5px;
+  margin: 20px;
 }
 
 .newAdjust{
   margin: 10px;
+}
+
+.padding{
+  padding-left: 25px;
+  padding-bottom: 25px;
 }
