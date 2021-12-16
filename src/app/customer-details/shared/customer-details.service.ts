@@ -34,4 +34,12 @@ export class CustomerDetailsService {
   public deleteDetail(detailId:Number):Observable<void>{
     return this._http.delete<void>(`${environment.apiUrl}/customerDetails/${detailId}`);
   }
+
+  public getAddressAsString(detail:DetailDto):string{
+    return detail.addressCountry+", "+detail.addressCity+", "+detail.addressStreet+", "+detail.addressNumber+", "+detail.addressPostCode+".";
+  }
+
+  public getFullNameAsString(detail:DetailDto):string{
+    return detail.firstName + " " + detail.lastName;
+  }
 }
