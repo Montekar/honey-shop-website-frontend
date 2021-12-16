@@ -70,6 +70,7 @@ export class CheckoutComponent implements OnInit {
         }
         btn.disabled = true;
         this._emailService.send(email).subscribe(()=>{
+          this.cartService.clearCart();
           this.orderNumber = response.id;
           },
           (error:HttpErrorResponse) => {
