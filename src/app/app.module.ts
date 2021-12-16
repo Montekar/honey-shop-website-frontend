@@ -18,6 +18,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { AuthInterceptor } from './auth/interceptors/auth.interceptor';
 import { ContactComponent } from "./contact/contact.component";
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AddEditComponent } from './admin-panel/add-edit/add-edit.component'
 //import { JwtInterceptor } from './_helpers/jwt.interceptor'
 //import { ErrorInterceptor } from './_helpers/error.interceptor'
 
@@ -35,7 +37,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     CustomerDetailsComponent,
     ShoppingCartComponent,
     CheckoutComponent,
-    ContactComponent
+    ContactComponent,
+    AdminPanelComponent,
+    AddEditComponent
   ],
   imports: [
     BrowserModule,

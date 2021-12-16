@@ -1,0 +1,10 @@
+<h2 *ngIf="isAddMode">Create new product</h2>
+<h2 *ngIf="!isAddMode">Edit product</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="name">
+  <textarea formControlName="description"></textarea>
+  <input type="number" formControlName="price">
+  <input type="submit" value="Save">
+
+  <a routerLink="/admin">Cancel</a>
+</form>
