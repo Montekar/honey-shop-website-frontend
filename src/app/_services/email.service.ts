@@ -1,17 +1,15 @@
 import {Injectable} from "@angular/core";
-import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
-import {Order} from "../_models/order";
 import {environment} from "../../environments/environment";
+import { Email } from "../_models/email"
 
 @Injectable({providedIn: 'root'})
-export class OrderService {
+export class EmailService {
   constructor(
-    private router: Router,
     private http: HttpClient
   ) {}
 
-  create(order: Order) {
-    return this.http.post(`${environment.apiUrl}/order`, order);
+  send(email:Email) {
+    return this.http.post(`${environment.apiUrl}/Email`, email);
   }
 }
