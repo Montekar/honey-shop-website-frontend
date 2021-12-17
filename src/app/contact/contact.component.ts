@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms"
+import { EmailService } from "../_services/email.service"
+import { Email } from "../_models/email"
+import { HttpErrorResponse } from "@angular/common/http"
 
 
 @Component({
@@ -7,8 +11,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  constructor() {
-
+  contactForm: FormGroup;
+  constructor(private formBuilder: FormBuilder,private emailService:EmailService) {
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      message: ['', Validators.required]
+    });
   }
 
   ngOnInit(): void {
@@ -28,4 +37,23 @@ export class ContactComponent implements OnInit {
     document.body.removeChild(selBox);
   }
 
+  onSubmit() {
+
+    if (this.contactForm.invalid) {
+      return;
+    }
+
+    var form = this.contactForm.value;
+    var email:Email = {
+      receiverEmail:"honeyshopcontactform@gmail.com",
+      body:form.message,
+      subject:form.name+" | "+form.email+" has filled the form!"
+    }
+
+    this.emailService.send(email).subscribe(()=>{
+      },
+      (error:HttpErrorResponse) => {
+        alert(error.message);
+      });
+  }
 }
