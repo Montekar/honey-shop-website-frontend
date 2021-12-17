@@ -25,17 +25,17 @@
             </div>
             <div class="col-lg-8 left">
               <h3>Contact form</h3>
-              <form target="_blank" action="https://formsubmit.co/b6f5a3ba3aa3f18733c893ba7550cfd2" method="POST">
+              <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                   <div class="col-sm-6">
-                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                    <input type="text" name="name" class="form-control"  formControlName="name" placeholder="Full Name" required>
                   </div>
                   <div class="col-sm-6">
-                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                    <input type="email" name="email" class="form-control" formControlName="email" placeholder="Email Address" required>
                   </div>
                 </div>
                 <div class="form-group">
-                  <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+                  <textarea placeholder="Your Message" class="form-control" formControlName="message" name="message" rows="10" required></textarea>
                 </div>
                 <button class="btn btn-block btn btn-lg btn-dark btn-block" type="submit">Send Now!</button>
               </form>
