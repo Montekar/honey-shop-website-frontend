@@ -12,6 +12,7 @@ import { HttpErrorResponse } from "@angular/common/http"
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
+  submitted:boolean = false;
   constructor(private formBuilder: FormBuilder,private emailService:EmailService) {
     this.contactForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -49,11 +50,15 @@ export class ContactComponent implements OnInit {
       body:form.message,
       subject:form.name+" | "+form.email+" has filled the form!"
     }
-
+    var btn = <HTMLInputElement> document.getElementById("submitButton");
+    btn.disabled = true;
     this.emailService.send(email).subscribe(()=>{
+        this.submitted=true;
+        btn.disabled = false;
       },
       (error:HttpErrorResponse) => {
         alert(error.message);
+        btn.disabled = false;
       });
   }
 }

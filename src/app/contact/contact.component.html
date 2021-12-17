@@ -1,5 +1,8 @@
+<div *ngIf="submitted" class="submitted-form">
+  <h1>Submitted</h1>
+</div>
 
-  <div class="box-wrapper" class="whole">
+  <div *ngIf="!submitted" class="box-wrapper" class="whole">
 
     <section class="contact" id="contact">
       <div class="container">
@@ -37,7 +40,7 @@
                 <div class="form-group">
                   <textarea placeholder="Your Message" class="form-control" formControlName="message" name="message" rows="10" required></textarea>
                 </div>
-                <button class="btn btn-block btn btn-lg btn-dark btn-block" type="submit">Send Now!</button>
+                <button id ="submitButton" class="btn btn-block btn btn-lg btn-dark btn-block" type="submit">Send Now!</button>
               </form>
             </div>
 
@@ -64,7 +67,6 @@
         </ul>
       </div>
     </div>
-
   </div>
 
 
