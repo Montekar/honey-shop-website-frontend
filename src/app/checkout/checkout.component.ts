@@ -50,7 +50,7 @@ export class CheckoutComponent implements OnInit {
     var thanksMessage = "Thank you for ordering with us, "+this._detailService.getFullNameAsString(this.selectedDetail)+"!\n\n";
     var orderMessage="Order Details: \n";
     orderMessage+=this.getProductsAsString();
-    orderMessage+="\nTotal Price: "+this.totalPrice+" DKK\n\n";
+    orderMessage+="\nTotal Price: "+this.totalPrice+" €\n\n";
     var deliveryMessage = "Your Phone Number: "+this.selectedDetail.phoneNumber +"\n"+"Your Delivery Address: "+this._detailService.getAddressAsString(this.selectedDetail)+"\n\n";
     var paymentDetails ="Use our provided bank number for the transaction and put your order number into the section for the purpose of the payment: \n\nBank number: LT00099999999\n\nYou will get a confirmation letter when money is received."
 

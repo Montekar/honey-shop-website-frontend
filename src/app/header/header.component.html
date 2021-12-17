@@ -24,8 +24,9 @@
       </li>
       <li class ="dropdown" *ngIf='jwt'><a hidden>{{_auth.getUserEmail()}}</a><a>Account</a>
          <ul>
+           <li *ngIf='_auth.hasRoleAdmin()'><a class="nav-link" routerLink="admin">Admin Panel</a></li>
            <li><a class="nav-link" routerLink="account/details">Manage Details</a></li>
-           <a class="nav-link" routerLink="/" (click)='onLogout()'>Log Out</a>
+           <li> <a class="nav-link" routerLink="/" (click)='onLogout()'>Log Out</a></li>
          </ul>
        </li>
       <li class="nav-item" *ngIf='jwt'>
