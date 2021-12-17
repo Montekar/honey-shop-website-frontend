@@ -10,6 +10,7 @@ import { AuthService } from '../auth/shared/auth.service'
 export class HeaderComponent implements OnInit {
   isMenuCollapsed!: boolean;
   public  jwt: string | null | undefined;
+  public isAdmin$: boolean | null | undefined;
 
   constructor(public _auth:AuthService,private router:Router) {
     _auth.isLoggedIn$.subscribe(jwt =>{

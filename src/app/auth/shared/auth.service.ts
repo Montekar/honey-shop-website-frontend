@@ -55,6 +55,19 @@ export class AuthService {
     return null;
   }
 
+  hasRoleAdmin():boolean{
+    var jsonObject = this.getPayload();
+    for(var key in jsonObject){
+      if(key == "Role"){
+        if(jsonObject[key]=="Admin"){
+          return true;
+        }
+      }
+    }
+
+    return false;
+  }
+
   getUserID():number{
     var jsonObject = this.getPayload();
     for(var key in jsonObject){

@@ -10,6 +10,7 @@ import { AuthGuard } from './auth/guards/auth.guard'
 import { CheckoutComponent } from "./checkout/checkout.component"
 import { AdminPanelComponent } from './admin-panel/admin-panel.component'
 import { AddEditComponent } from './admin-panel/add-edit/add-edit.component'
+import { AdminGuard } from "./auth/guards/admin.guard"
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -19,9 +20,9 @@ const routes: Routes = [
   { path: 'cart', component: ShoppingCartComponent,canActivate:[AuthGuard]},
   {path:'checkout',component:CheckoutComponent,canActivate:[AuthGuard]},
   { path: 'contact', component: ContactComponent },
-  { path: 'admin', component: AdminPanelComponent },
-  { path: 'admin/add', component: AddEditComponent },
-  { path: 'admin/edit/:id', component: AddEditComponent },
+  { path: 'admin', component: AdminPanelComponent,canActivate:[AdminGuard]},
+  { path: 'admin/add', component: AddEditComponent,canActivate:[AdminGuard]},
+  { path: 'admin/edit/:id', component: AddEditComponent,canActivate:[AdminGuard]},
  { path: 'auth', loadChildren: () => import ('./auth/auth.module').then(v => v.AuthModule) },
 
   { path: '**', redirectTo: 'home' },
