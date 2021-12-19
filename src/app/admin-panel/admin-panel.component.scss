@@ -48,45 +48,6 @@ h1 {
   }
 }
 
-.color-change-5x {
-  -webkit-animation: color-change-5x 6s linear infinite alternate both;
-  animation: color-change-5x 6s linear infinite alternate both;
-}
-
-@-webkit-keyframes color-change-5x {
-  0% {
-    background: #ffcc00;
-  }
-  25% {
-    background: #ffd633;
-  }
-  50% {
-    background: #ffe066;
-  }
-  75% {
-    background: #ffeb99;
-  }
-  100% {
-    background: #fff5cc;
-  }
-}
-@keyframes color-change-5x {
-  0% {
-    background: #ffcc00;
-  }
-  25% {
-    background: #ffd633;
-  }
-  50% {
-    background: #ffe066;
-  }
-  75% {
-    background: #ffeb99;
-  }
-  100% {
-    background: #fff5cc;
-  }
-}
 
 -------
 

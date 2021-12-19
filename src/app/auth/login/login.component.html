@@ -1,4 +1,4 @@
-<header style='text-align:center'><h1>Login</h1></header>
+<header style='text-align:center' class="theme"><h1>Login</h1></header>
 <body>
 <div *ngIf="alert" class="alert alert-danger alert-dismissible fade show" role="alert">
   <strong>Incorrect Details!</strong>
@@ -22,6 +22,6 @@
       <div *ngIf='password.errors?.required'>Can't be empty!</div>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-primary yellow">Login</button>
 </form>
 </body>
