@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/honey-shop-website-frontend",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
